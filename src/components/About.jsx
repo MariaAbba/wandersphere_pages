@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import img from '../assets/img.jpg'
 import team1 from '../assets/img.jpg'
+import quotation from '../assets/quotation.png'
 import imgBg from '../assets/img-05.jpg'
 import { RiPlanetLine } from 'react-icons/ri'
 import { BiPhone } from 'react-icons/bi'
 import {
+  FaCheckCircle,
   FaFacebook,
   FaInstagram,
   FaPinterest,
@@ -16,6 +18,9 @@ import { GiDeer, GiLion } from 'react-icons/gi'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
 import Carousel from 'react-multi-carousel'
+import { BsQuote } from 'react-icons/bs'
+import { MdOutlineStarHalf, MdStar } from 'react-icons/md'
+import { IoMdStarOutline } from 'react-icons/io'
 
 const responsive = {
   superLargeDesktop: {
@@ -37,11 +42,33 @@ const responsive = {
 }
 
 const team = [
-  {id:1, name: 'John Doe', image: team1, position: 'CEO', },
-  {id:2, name: 'John Doe', image: team1, position: 'CEO', },
-  {id:3, name: 'John Doe', image: team1, position: 'CEO', },
-  {id:4, name: 'John Doe', image: team1, position: 'CEO', }
+  { id: 1, name: 'John Doe', image: team1, position: 'CEO' },
+  { id: 2, name: 'John Doe', image: team1, position: 'CEO' },
+  { id: 3, name: 'John Doe', image: team1, position: 'CEO' },
+  { id: 4, name: 'John Doe', image: team1, position: 'CEO' },
 ]
+
+const features = [
+  {
+    icon: <FaCheckCircle className="text-orange" />,
+    title: 'Safety First Always',
+    description:
+      'Set perspiciatis unde omnis estenatus voluptatem totarem aperiae.',
+  },
+  {
+    icon: <FaCheckCircle className="text-orange" />,
+    title: 'Low Price & Friendly',
+    description:
+      'Quis autem vel eum iure voluptate velit esse nihilie consequatur.',
+  },
+  {
+    icon: <FaCheckCircle className="text-orange" />,
+    title: 'Trusted Travel Guide',
+    description:
+      'At vero accusamus dignissimos ducimus blanditiis deleniti atque quos.',
+  },
+]
+
 const About = () => {
   const [hoverCard, setHoverCard] = useState(null)
   const Available = ({ icon, title }) => {
@@ -112,6 +139,28 @@ const About = () => {
       </div>
     )
   }
+
+  const Rating = ({ rating }) => {
+    return (
+      <div className="flex justify-center">
+        {[...Array(5)].map((_, index) => {
+          const ratingValue = index + 1
+          return (
+            <span key={index} className="text-[#ffa801] text-xl">
+              {rating >= ratingValue ? (
+                <MdStar />
+              ) : rating >= ratingValue - 0.5 ? (
+                <MdOutlineStarHalf />
+              ) : (
+                <IoMdStarOutline />
+              )}
+            </span>
+          )
+        })}
+      </div>
+    )
+  }
+
   return (
     <div>
       <section className="relative bg-black lg:h-[380px]">
@@ -314,6 +363,93 @@ const About = () => {
               </div>
             ))}
           </Carousel>
+        </div>
+      </section>
+      <section className="py-16">
+        <div className="max-w-[1320px] mx-auto px-3 flex flex-col lg:flex-row gap-16">
+          <div className="lg:w-1/2 gap-6 flex flex-col items-center">
+            <div className="flex flex-col lg:flex-row gap-6 items-baseline">
+              <img
+                src={imgBg}
+                alt=""
+                className="rounded-lg object-cover w-[300px] h-[300px]"
+              />
+              <img
+                src={imgBg}
+                alt=""
+                className="rounded-lg object-cover w-[300px] h-[350px]"
+              />
+            </div>
+            <img
+              src={imgBg}
+              alt=""
+              className="rounded-lg object-cover  w-[500px]"
+            />
+          </div>
+
+          <div className="lg:w-1/2">
+            <div className="flex flex-col">
+              <div className="relative w-fit px-8 py-2 flex items-center justify-center">
+                <span className="bg-green rounded-md opacity-15 absolute w-full h-full z-10"></span>
+                <h6 className="text-green relative font-semibold">
+                  Who We Are
+                </h6>
+              </div>
+              <h3 className="lg:text-5xl text-3xl font-bold pb-8 py-4 ">
+                Great opportunity for adventure & travels
+              </h3>
+            </div>
+            <div className="flex flex-col gap-8 mt-8">
+              {features.map((feature, index) => (
+                <div key={index} className="flex items-center gap-4">
+                  <div className="text-2xl">{feature.icon}</div>
+                  <div>
+                    <h4 className="text-xl font-semibold">{feature.title}</h4>
+                    <p className="text-gray-600">{feature.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className='bg-[url("/assets/bg-03.jpg")] bg-cover bg-no-repeat bg-center'>
+        <div className="relative z-20 py-24">
+          <div className="flex gap-12 max-w-[1320px] px-6 mx-auto">
+            <div className="flex items-center justify-between">
+              <p className="lg:w-2/3 lg:text-6xl text-[30px] lg:leading-[1.12] font-bold text-white py-7">
+                Ready to travel with real adventure and enjoy natural
+              </p>
+            </div>
+            <span>
+              <button className="animate-pulse bg-white rounded-full w-24 h-24 flex justify-center items-center mb-8">
+                <FaPlay color="black" />
+              </button>
+            </span>
+          </div>
+        </div>
+      </section>
+      <section className='bg-[url("/assets/bg-03.jpg")] bg-cover bg-no-repeat bg-center'>
+        <div className="max-w-[1320px] mx-auto px-3">
+          <div className="lg:flex py-16">
+            <div className="lg:w-1/2">
+              <img src={quotation} alt="" />
+            </div>
+            <div className="lg:w-1/2">
+              <div className='flex gap-8'>
+                <BsQuote size={80} className='text-green' />
+                <span className='flex flex-col gap-3 items-start'>
+                  <p className='text-2xl font-bold'>Quality Service</p>
+                  <Rating />
+                </span>
+              </div>
+              <p className='text-xl leading-9 mb-7 py-6 border-b border-[#e2dfeb]'>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia
+                nihil nesciunt optio? Repudiandae recusandae doloremque, iure
+                modi omnis officiis qui.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </div>
