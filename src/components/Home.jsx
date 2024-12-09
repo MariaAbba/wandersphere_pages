@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import img from '../assets/img1.jpg'
+// import map from '../assets/map-bg.png'
 import arrow from '../assets/arrow1.png'
 import { MdOutlineParagliding } from 'react-icons/md'
 import { FaPeopleCarry } from 'react-icons/fa'
@@ -135,7 +136,7 @@ const Hero = () => {
             <div className="flex items-center w-full lg:border-r border-b py-2 pr-4 mr-4">
               <MdOutlineParagliding className="text-green text-3xl mr-2" />
               <div className="flex flex-col w-full">
-                <p className="text-gray-600 text-sm ">Location</p>
+                <p className="text-gray-600 text-sm">Location</p>
                 <select name="" id="" className="focus:outline-none">
                   <option value="">Locations</option>
                 </select>
@@ -187,14 +188,15 @@ const Hero = () => {
             className="lg:block hidden my-4 -ml-96 filter brightness-0 invert"
             style={{ height: '100px', width: 'auto' }}
           />
-          <p className="text-white font-semibold lg:text-3xl text-xl lg:py-0 py-8">
+          <p className="text-white font-semibold lg:text-3xl text-xl lg:py-0 py-8 md:hidden">
             Or browse the selected type
           </p>
         </div>
       </section>
 
-      <section className="bg-[#F3F8F6] bg-[url('./src/assets/bg-shape-01.jpg')]">
-        <div className="relative z-10 max-w-[1320px] px-6 mx-auto -mt-24">
+      {/* <section className="bg-[#F3F8F6] bg-[url('./src/assets/map-bg.png')]"> */}
+      <section className="bg-[#F3F8F6] bg-[url('./src/assets/bg-map.png')]">
+        <div className="relative z-10 max-w-[1320px] px-6 mx-auto lg:mt-0 xl:-mt-16 2xl:-mt-24">
           <Carousel
             responsive={responsives}
             infinite

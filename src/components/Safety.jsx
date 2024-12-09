@@ -23,7 +23,7 @@ const Safety = () => {
   return (
     <div>
       <div className="px-3">
-        <div className='max-w-[1320px] mx-auto bg-[url("./src/assets/clouds.png")] bg-green bg-no-repeat bg-cover rounded-[10px] relative z-10 lg:mb-0 -mb-24'>
+        <div className="max-w-[1320px] mx-auto bg-[url('./src/assets/bg-map.png')] bg-green bg-no-repeat bg-cover rounded-[10px] relative z-10 lg:mb-0 -mb-24">
           <div className="lg:p-16 py-8 px-4 lg:flex justify-between items-center">
             <div className="flex items-center gap-4 lg:mb-0 mb-4">
               {/* <div> */}
@@ -47,8 +47,8 @@ const Safety = () => {
             alt=""
             className="w-full lg:w-1/2 lg:h-auto h-[350px] object-cover"
           />
-
-          <div className="lg:w-1/2 bg-[url('/bg-shape-07.png')] bg-no-repeat bg-cover lg:p-20 lg:pt-44 pr-4 py-20 px-3 bg-[#F3F8F6]">
+          {/* bg-[url('./src/assets/bg-map.png')] */}
+          <div className="lg:w-1/2 bg-[url('/assets/src/bg-map.png')] bg-no-repeat bg-cover lg:p-20 lg:pt-44 pr-4 py-20 px-3 bg-[#F3F8F6]">
             <div className="flex-col flex">
               <div className="relative w-fit px-8 py-2 flex items-center justify-center">
                 <span className="bg-green rounded-md opacity-15 absolute w-full h-full z-10"></span>
