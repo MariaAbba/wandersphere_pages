@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import img from '../assets/img1.jpg'
 // import map from '../assets/map-bg.png'
 import arrow from '../assets/arrow1.png'
@@ -27,6 +27,7 @@ import Info from './Info'
 import Explore from './Safety'
 import Safety from './Safety'
 import Blog from './Blog'
+
 
 const responsives = {
   superLargeDesktop: {
@@ -74,6 +75,9 @@ const type = [
   { id: 5, title: 'Adventure', icon: <LiaWarehouseSolid /> },
 ]
 const Hero = () => {
+
+
+
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const handleAfterChange = (_, state) => {
@@ -188,15 +192,14 @@ const Hero = () => {
             className="lg:block hidden my-4 -ml-96 filter brightness-0 invert"
             style={{ height: '100px', width: 'auto' }}
           />
-          <p className="text-white font-semibold lg:text-3xl text-xl lg:py-0 py-8 md:hidden">
+          <p className="text-white font-semibold lg:text-3xl text-xl lg:py-0 py-8 ">
             Or browse the selected type
           </p>
         </div>
       </section>
 
-      {/* <section className="bg-[#F3F8F6] bg-[url('./src/assets/map-bg.png')]"> */}
-      <section className="bg-[#F3F8F6] bg-[url('./src/assets/bg-map.png')]">
-        <div className="relative z-10 max-w-[1320px] px-6 mx-auto lg:mt-0 xl:-mt-16 2xl:-mt-24">
+      <section className="bg-[#F3F8F6] bg-[url('./src/assets/bg-map.png')] bg-cover">
+        <div className="relative z-10 max-w-[1320px] px-6 mx-auto  md:-mt-16 2xl:-mt-24">
           <Carousel
             responsive={responsives}
             infinite

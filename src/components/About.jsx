@@ -1,6 +1,15 @@
-import React, { useState } from 'react'
-import img from '../assets/img.jpg'
-import team1 from '../assets/img.jpg'
+import React, { useEffect, useState } from 'react'
+import img from '../assets/bg-shape-01.jpg'
+import feat01 from '../assets/feat-01.jpg'
+import feat02 from '../assets/feat-02.jpg'
+import img02 from '../assets/img-02.jpg'
+import team1 from '../assets/team-1.jpg'
+import team2 from '../assets/team-2.jpg'
+import team3 from '../assets/team-3.jpg'
+import team4 from '../assets/team-4.jpg'
+import team5 from '../assets/team-5.jpg'
+import team6 from '../assets/team-6.jpg'
+import team7 from '../assets/team-7.jpg'
 import quotation from '../assets/quotation.png'
 import imgBg from '../assets/img-05.jpg'
 import { RiPlanetLine } from 'react-icons/ri'
@@ -21,6 +30,8 @@ import Carousel from 'react-multi-carousel'
 import { BsQuote } from 'react-icons/bs'
 import { MdOutlineStarHalf, MdStar } from 'react-icons/md'
 import { IoMdStarOutline } from 'react-icons/io'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const responsive = {
   superLargeDesktop: {
@@ -42,10 +53,28 @@ const responsive = {
 }
 
 const team = [
-  { id: 1, name: 'John Doe', image: team1, position: 'CEO' },
-  { id: 2, name: 'John Doe', image: team1, position: 'CEO' },
-  { id: 3, name: 'John Doe', image: team1, position: 'CEO' },
-  { id: 4, name: 'John Doe', image: team1, position: 'CEO' },
+  { id: 1, name: 'Ethan Bennett', image: team1, position: 'CEO' },
+  { id: 2, name: 'Olivia Parker', image: team2, position: 'Travel Consultant' },
+  { id: 3, name: 'Emma Collins', image: team3, position: 'Reservation Agent' },
+  { id: 4, name: 'Sophia Brooks', image: team4, position: 'Itinerary Planner' },
+  {
+    id: 5,
+    name: 'Noah Davis',
+    image: team5,
+    position: 'Group Travel Organizer',
+  },
+  {
+    id: 6,
+    name: 'Ava Morgan',
+    image: team6,
+    position: 'Destination Specialist',
+  },
+  {
+    id: 7,
+    name: 'Liam Carter',
+    image: team7,
+    position: 'Visa and Documentation Specialist',
+  },
 ]
 
 const features = [
@@ -70,8 +99,18 @@ const features = [
 ]
 
 const About = () => {
+
+   useEffect(() => {
+     Aos.init({
+       duration: 1500,
+     })
+   }, [])
+
+
   const [hoverCard, setHoverCard] = useState(null)
   const Available = ({ icon, title }) => {
+
+       
     return (
       <div className="flex flex-col gap-4 shadow-xl bg-white rounded-lg p-7 group">
         <span className="bg-[#f3f8f6] text-green w-fit rounded-full p-4 group-hover:text-white group-hover:bg-green">
@@ -162,6 +201,7 @@ const About = () => {
   }
 
   return (
+    
     <div>
       <section className="relative bg-black lg:h-[380px]">
         <img src={img} alt="" className="absolute h-full w-full object-cover" />
@@ -169,11 +209,11 @@ const About = () => {
           <span className="lg:text-[52px] text-3xl text-white text-center font-bold relative">
             About
           </span>
-          <p className="text-white text-lg text-center my-4">People</p>
+          <p className="text-white text-lg text-center my-4">People don't take trips, trips take people.</p>
         </div>
       </section>
 
-      <section className="bg-[url('/assets/bg-02.jpg')] bg-cover bg-no-repeat bg-center">
+      <section className="bg-[url('/assets/bg-map.png')] bg-cover bg-no-repeat bg-center">
         <div className="lg:flex max-w-[1320px] mx-auto relative pt-[120px] px-3">
           <div className="flex flex-col gap-6 lg:w-[45%] lg:pr-[80px] lg:pb-[150px] lg:pl-[15px]">
             <div className="flex flex-col">
@@ -184,7 +224,7 @@ const About = () => {
                 </h6>
               </div>
               <h3 className="lg:text-5xl text-3xl font-bold pb-8 py-4 lg:leading-[1.2]">
-                Enjoy real adventure
+              Explore Wandersphere Real Adventure & Travels
               </h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
@@ -241,7 +281,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className='bg-[url("/assets/bg-03.jpg")] bg-cover bg-no-repeat bg-center'>
+      <section className='bg-[url("/assets/camping.jpg")] bg-cover bg-no-repeat bg-center'>
         <div className="relative z-0 py-24">
           <div className="lg:flex gap-12 max-w-[1320px] mx-auto px-6 mt-32">
             <div className="lg:w-1/2">
@@ -307,7 +347,7 @@ const About = () => {
               The Experts
             </h3>
           </div>
-        </div>
+        {/* </div> */}
         <div className="relative pt-8 z-10">
           <Carousel
             responsive={responsive}
@@ -327,6 +367,8 @@ const About = () => {
                     alt={item.name}
                     loading="lazy"
                     className="rounded-lg object-cover"
+                    width={300}
+                    height={300}
                   />
                   <div className="absolute bottom-0 right-10 z-30">
                     <div className="transition-opacity duration-300 hover:cursor-pointer">
@@ -357,31 +399,32 @@ const About = () => {
                 <div className="w-full p-7 pt-24 text-center box-border bg-white rounded-lg mb-7 -mt-20 shadow-lg">
                   <span>
                     <h3 className="text-2xl font-bold">{item.name}</h3>
-                    <p className="text-sm font-medium">Consultant</p>
+                    <p className="text-sm font-medium">{item.position}</p>
                   </span>
                 </div>
               </div>
             ))}
           </Carousel>
         </div>
+         </div>
       </section>
       <section className="py-16">
         <div className="max-w-[1320px] mx-auto px-3 flex flex-col lg:flex-row gap-16">
           <div className="lg:w-1/2 gap-6 flex flex-col items-center">
             <div className="flex flex-col lg:flex-row gap-6 items-baseline">
               <img
-                src={imgBg}
+                src={feat01}
                 alt=""
                 className="rounded-lg object-cover w-[300px] h-[300px]"
               />
               <img
-                src={imgBg}
+                src={feat02}
                 alt=""
                 className="rounded-lg object-cover w-[300px] h-[350px]"
               />
             </div>
             <img
-              src={imgBg}
+              src={img02}
               alt=""
               className="rounded-lg object-cover  w-[500px]"
             />
@@ -413,7 +456,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className='bg-[url("/assets/bg-03.jpg")] bg-cover bg-no-repeat bg-center'>
+      <section className='bg-[url("/assets/camping.jpg")] bg-cover bg-no-repeat bg-center'>
         <div className="relative z-20 py-24">
           <div className="flex gap-12 max-w-[1320px] px-6 mx-auto">
             <div className="flex items-center justify-between">
@@ -429,21 +472,21 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className='bg-[url("/assets/bg-03.jpg")] bg-cover bg-no-repeat bg-center'>
+      <section className='bg-[url("/assets/bg-map.png")] bg-cover bg-no-repeat bg-center'>
         <div className="max-w-[1320px] mx-auto px-3">
           <div className="lg:flex py-16">
             <div className="lg:w-1/2">
               <img src={quotation} alt="" />
             </div>
             <div className="lg:w-1/2">
-              <div className='flex gap-8'>
-                <BsQuote size={80} className='text-green' />
-                <span className='flex flex-col gap-3 items-start'>
-                  <p className='text-2xl font-bold'>Quality Service</p>
+              <div className="flex gap-8">
+                <BsQuote size={80} className="text-green" />
+                <span className="flex flex-col gap-3 items-start">
+                  <p className="text-2xl font-bold">Quality Service</p>
                   <Rating />
                 </span>
               </div>
-              <p className='text-xl leading-9 mb-7 py-6 border-b border-[#e2dfeb]'>
+              <p className="text-xl leading-9 mb-7 py-6 border-b border-[#e2dfeb]">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia
                 nihil nesciunt optio? Repudiandae recusandae doloremque, iure
                 modi omnis officiis qui.

@@ -82,14 +82,14 @@ const Blog = () => {
             image="../../public/blog-1.jpg"
           />
           <Blogs
-            text="Things to see and do when visiting Japan"
+            text="Unmissable experiences to light up your New York adventure"
             title="Adventure"
-            image="../../public/blog-1.jpg"
+            image="../../public/blog-2.jpg"
           />
           <div className="flex flex-col gap-2">
-            <Blogs text="Things to see and do when visiting Japan" />
-            <Blogs text="Things to see and do when visiting Japan" />
-            <Blogs text="Things to see and do when visiting Japan" />
+            <Blogs text="Discover the vibrant culture and history of Berlin" />
+            <Blogs text="Experience the romance and charm of Paris" />
+            <Blogs text="Uncover iconic landmarks and hidden gems in London" />
           </div>
         </div>
       </section>
@@ -102,22 +102,22 @@ const Blog = () => {
           itemClass="4"
         >
           <div className="h-[298px] relative overflow-hidden">
-            <img src="../../public/blog-1.jpg" alt="" />
+            <img src="../../public/japan.jpg" alt="" />
           </div>
           <div className="h-[298px] relative overflow-hidden">
-            <img src="../../public/blog-1.jpg" alt="" />
+            <img src="../../public/lisboa.jpg" alt="" />
           </div>
           <div className="h-[298px] relative overflow-hidden">
-            <img src="../../public/blog-1.jpg" alt="" />
+            <img src="../../public/paris.jpg" alt="" />
           </div>
           <div className="h-[298px] relative overflow-hidden">
-            <img src="../../public/blog-1.jpg" alt="" />
+            <img src="../../public/barcelona.jpg" alt="" />
           </div>
           <div className="h-[298px] relative overflow-hidden">
-            <img src="../../public/blog-1.jpg" alt="" />
+            <img src="../../public/london.jpg" alt="" />
           </div>
           <div className="h-[298px] relative overflow-hidden">
-            <img src="../../public/blog-1.jpg" alt="" />
+            <img src="../../public/ny.jpg" alt="" />
           </div>
         </Carousel>
       </div>

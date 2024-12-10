@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import slider from './../assets/phi.jpg'
+import slider from './../assets/bg-shape-01.jpg'
 import CardSlider from './CardSlider'
 import Sidebar from './Sidebar'
 import { BsSortAlphaDown } from 'react-icons/bs'
@@ -65,7 +65,7 @@ const Tour = () => {
         </div>
       </section>
       <CardSlider />
-      <section className="lg:flex gap-8 max-w-[1320px] mx-auto px-3">
+      <section className="lg:flex gap-8 max-w-[1320px] mx-auto px-3 mb-8">
         <Sidebar />
 
         <div className="lg:2/3">

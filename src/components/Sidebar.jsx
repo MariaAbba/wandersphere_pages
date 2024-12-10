@@ -4,23 +4,25 @@ import { FaPeopleCarry, FaUsers } from 'react-icons/fa'
 import { MdOutlineParagliding, MdSearch } from 'react-icons/md'
 import ReactSlider from 'react-slider'
 import Rating from './Rating'
-import img1 from './../assets/fr.jpg'
+import img1 from '../../public/paris.jpg'
+import img2 from '../../public/amsterdam.jpg'
+import img3 from '../../public/ny.jpg'
 
 const cardData = [
   {
     image: img1,
     rating: '4',
-    price: '319',
+    price: '819',
     title: 'Rainbow Mountain Red Valley',
   },
   {
-    image: img1,
+    image: img2,
     rating: '4',
-    price: '319',
+    price: '619',
     title: 'Rainbow Mountain Red Valley',
   },
   {
-    image: img1,
+    image: img3,
     rating: '4',
     price: '319',
     title: 'Rainbow Mountain Red Valley',
@@ -38,7 +40,7 @@ const Sidebar = () => {
             <img
               src={item.image}
               alt="card"
-              className="rounded-lg"
+              className="rounded-lg object-cover"
               width={90}
               height={65}
             />

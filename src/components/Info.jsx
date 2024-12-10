@@ -1,7 +1,7 @@
 import React from 'react'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
-import img from './../assets/img1.jpg'
+import img from './../assets/video.jpg'
 import { BsPlay } from 'react-icons/bs'
 import Accordion from '../components/Accordion'
 import { IoVideocamOutline } from 'react-icons/io5'
