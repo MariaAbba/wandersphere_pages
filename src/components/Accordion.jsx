@@ -49,7 +49,7 @@ const Accordion = () => {
                   )}
                 </span>
               </DisclosureButton>
-              <DisclosurePanel className=" bg-white p-4 border-l-2 border-green rounded-sm mb-2 ">
+              <DisclosurePanel className="bg-white p-4 border-l-2 border-green rounded-sm mb-2">
                 <p className="text-gray-600"> {item.content}</p>
               </DisclosurePanel>
             </>

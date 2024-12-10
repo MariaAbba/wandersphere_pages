@@ -141,8 +141,13 @@ const Hero = () => {
               <MdOutlineParagliding className="text-green text-3xl mr-2" />
               <div className="flex flex-col w-full">
                 <p className="text-gray-600 text-sm">Location</p>
-                <select name="" id="" className="focus:outline-none">
-                  <option value="">Locations</option>
+                <label htmlFor="locationInput" className="sr-only"></label>
+                <select
+                  name="location"
+                  id="locationInput"
+                  className="focus:outline-none"
+                >
+                  <option value="Sydney">Sydney</option>
                 </select>
               </div>
             </div>
@@ -150,8 +155,14 @@ const Hero = () => {
               <FaPeopleCarry className="text-green text-3xl mr-2" />
               <div className="flex flex-col w-full">
                 <p className="text-gray-600 text-sm ">Type</p>
-                <select name="" id="" className="focus:outline-none">
-                  <option value="">Booking type</option>
+                <label
+                  htmlFor="typeInput"
+                  className="sr-only"
+                > </label>
+                <select name="type" id="typeInput" className="focus:outline-none">
+                  <option value="hotel">Hotel</option>
+                  <option value="flight">Flight</option>
+                  <option value="event">Event</option>
                 </select>
               </div>
             </div>
@@ -160,7 +171,13 @@ const Hero = () => {
               <FaRegCalendarAlt className="text-green text-3xl mr-2" />
               <div className="flex flex-col w-full">
                 <p className="text-gray-600 text-sm ">Date from</p>
-                <input type="date" className="focus:outline-none" />
+                <label htmlFor="dateInput" className="sr-only">
+                  <input
+                    type="date"
+                    id="dateInput"
+                    className="focus:outline-none"
+                  />
+                </label>
               </div>
             </div>
 
@@ -168,11 +185,14 @@ const Hero = () => {
               <FaUsers className="text-green text-3xl mr-2" />
               <div className="flex flex-col w-full">
                 <p className="text-gray-600 text-sm ">Guests</p>
-                <input
-                  type="number"
-                  min="0"
-                  className="focus:outline-none w-16"
-                />
+                <label htmlFor="guestsInput" className="sr-only">
+                  <input
+                    id="guestsInput"
+                    type="number"
+                    min="0"
+                    className="focus:outline-none w-16"
+                  />
+                </label>
               </div>
             </div>
             <div className="flex items-center mr-4 lg:mt-0 mt-4">

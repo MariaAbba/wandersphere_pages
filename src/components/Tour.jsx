@@ -81,9 +81,10 @@ const Tour = () => {
                   onClick={() => setSortAsc(!sortAsc)}
                 />
               </span>
+              <label htmlFor="sortInput" className='sr-only'></label>
               <select
-                name=""
-                id=""
+                name="sort"
+                id="sortInput"
                 value={sortCriterion}
                 onChange={handleSortChange}
               >
@@ -120,7 +121,7 @@ const Tour = () => {
           />
         </div>
       </section>
-      <div className="bg-[url('/bg-shape-04.png')] bg-green bg-no-repeat bg-cover relative z-10 lg:mb-0 -mb-24">
+      <div className="bg-[url('/assets/bg-map.png')] bg-green bg-no-repeat bg-cover relative z-10 lg:mb-0 -mb-24">
         <div className="lg:py-16 py-8 lg:px-3 px-4 lg:flex justify-between items-center max-w-[1320px] mx-auto">
           <div className="flex items-center gap-4 lg:mb-0 mb-4">
             <RiPlanetLine color="white" size={64} />

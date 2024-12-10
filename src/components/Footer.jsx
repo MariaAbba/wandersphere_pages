@@ -99,7 +99,11 @@ const Footer = () => {
               </p>
 
               <div className="relative h-14 flex items-center">
+                <label htmlFor="emailInput" className="sr-only">
+                  Email Address
+                </label>
                 <input
+                  id="emailInput"
                   type="email"
                   placeholder="Enter your email"
                   className="w-full h-full bg-white  rounded-l-lg  px-3 outline-none"
@@ -108,8 +112,9 @@ const Footer = () => {
                   <BsSendCheck />
                 </button>
               </div>
-              <label className="pt-2" htmlFor="">
-                <input type="checkbox" /> I agree to all terms and policies.
+              <label className="pt-2 sr-only" htmlFor="checkboxInput">
+                <input type="checkbox" id="checkboxInput" /> I agree to all
+                terms and policies.
               </label>
             </div>
 
@@ -120,7 +125,7 @@ const Footer = () => {
                     <MdPhone className="text-green" />
                   </button>
                   <span>
-                    <p className='text-sm text-gray-500'>Drop a Line</p>
+                    <p className="text-sm text-gray-500">Drop a Line</p>
                     <p>+00 (123) 456 889</p>
                   </span>
                 </li>
@@ -130,7 +135,7 @@ const Footer = () => {
                     <MdOutlineMailOutline className="text-green" />
                   </button>
                   <span>
-                    <p className='text-sm text-gray-500'>Email Address</p>
+                    <p className="text-sm text-gray-500">Email Address</p>
                     <p>qKp7o@example.com</p>
                   </span>
                 </li>
@@ -139,7 +144,7 @@ const Footer = () => {
                     <MdOutlineLocationOn className="text-green" />
                   </button>
                   <span>
-                    <p className='text-sm text-gray-500'>Visit Office</p>
+                    <p className="text-sm text-gray-500">Visit Office</p>
                     <p>583 Main Str. New York, USA</p>
                   </span>
                 </li>

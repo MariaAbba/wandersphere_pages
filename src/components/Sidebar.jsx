@@ -4,28 +4,28 @@ import { FaPeopleCarry, FaUsers } from 'react-icons/fa'
 import { MdOutlineParagliding, MdSearch } from 'react-icons/md'
 import ReactSlider from 'react-slider'
 import Rating from './Rating'
-import img1 from '../../public/paris.jpg'
-import img2 from '../../public/amsterdam.jpg'
-import img3 from '../../public/ny.jpg'
+import img1 from '/paris.jpg'
+import img2 from '/amsterdam.jpg'
+import img3 from '/ny.jpg'
 
 const cardData = [
   {
     image: img1,
     rating: '4',
     price: '819',
-    title: 'Rainbow Mountain Red Valley',
+    title: 'Spotlight Nights: A Cabaret Extravaganza!',
   },
   {
     image: img2,
     rating: '4',
     price: '619',
-    title: 'Rainbow Mountain Red Valley',
+    title: "Amsterdam's Enchanting Nightlife",
   },
   {
     image: img3,
     rating: '4',
     price: '319',
-    title: 'Rainbow Mountain Red Valley',
+    title: "NYC's Iconic Vibes & Urban Pulse",
   },
 ]
 
@@ -63,12 +63,19 @@ const Sidebar = () => {
         <div className="mb-4 flex items-center border-b py-4">
           <MdOutlineParagliding className="text-green text-5xl mr-2" />
           <div className="w-full">
-            <h3 className="font-semibold mb-2"> Destinations</h3>
-            <select name="" id="" className="w-full rounded outline-none">
-              <option value="">London</option>
-              <option value="">Paris</option>
-              <option value="">Dubai</option>
-              <option value="">Edinburgh</option>
+            <label htmlFor="destinationSelect" className="font-semibold mb-2">
+              Destinations
+            </label>
+            {/* <h3 className="font-semibold mb-2"> Destinations</h3> */}
+            <select
+              name="destination"
+              id="destinationSelect"
+              className="w-full rounded outline-none"
+            >
+              <option value="london">London</option>
+              <option value="paris">Paris</option>
+              <option value="dubai">Dubai</option>
+              <option value="edinburgh">Edinburgh</option>
             </select>
           </div>
         </div>
@@ -76,15 +83,22 @@ const Sidebar = () => {
         <div className="mb-4 flex items-center border-b py-4">
           <FaPeopleCarry className="text-green text-5xl mr-2" />
           <div className="w-full">
-            <h3 className="font-semibold mb-2"> Activity</h3>
-            <select name="" id="" className="w-full rounded outline-none">
-              <option value="">City Tours</option>
-              <option value="">Shopping </option>
-              <option value="">Dining Experiences</option>
-              <option value="">Nightlife</option>
-              <option value="">Hiking/Trekking</option>
-              <option value="">Rock Climbing</option>
-              <option value="">Safari Tours</option>
+            <label htmlFor="activitySelect" className="font-semibold mb-2">
+              Activity
+            </label>
+            {/* <h3 className="font-semibold mb-2"> Activity</h3> */}
+            <select
+              name="activity"
+              id="activitySelect"
+              className="w-full rounded outline-none"
+            >
+              <option value="cityTours">City Tours</option>
+              <option value="shopping">Shopping </option>
+              <option value="diningExperience">Dining Experiences</option>
+              <option value="nightLife">Night life</option>
+              <option value="hiking">Hiking/Trekking</option>
+              <option value="rockClimbing">Rock Climbing</option>
+              <option value="safari">Safari Tours</option>
             </select>
           </div>
         </div>
@@ -93,14 +107,24 @@ const Sidebar = () => {
           <AiOutlineCalendar className="text-green text-5xl mr-2" />
           <div className="w-full">
             <h3 className="font-semibold mb-2">Date From:</h3>
-            <input type="date" className="w-full rounded" />
+            <label htmlFor="dateInput" className="sr-only">
+              <input type="date" id="dateInput" className="w-full rounded" />
+            </label>
           </div>
         </div>
         <div className="mb-4 flex items-center border-b py-4">
           <FaUsers className="text-green text-5xl mr-2" />
           <div className="w-full">
             <h3 className="font-semibold mb-2">Guests</h3>
-            <input type="number" className="w-full rounded" min="0" max="45" />
+            <label htmlFor="guestInput" className="sr-only">
+              <input
+                id="guestInput"
+                type="number"
+                className="w-full rounded"
+                min="0"
+                max="45"
+              />
+            </label>
           </div>
         </div>
         <div className="mb-4 flex items-center border-b py-4">
@@ -144,20 +168,35 @@ const Sidebar = () => {
           <div className="mb-4">
             <h3 className="font-semibold mb-2 text-lg">Languages</h3>
             <div className="flex flex-col">
-              {['English', 'Spanish', 'French', 'German', 'Arabic'].map(
-                (language) => (
-                  <label
-                    key={language}
-                    className="inline-flex items-center mt-2"
-                  >
-                    <input
-                      type="checkbox"
-                      className="form-checkbox h-4 w-4 text-green"
-                    />
-                    <span className="ml-2">{language}</span>
-                  </label>
-                )
-              )}
+              {[
+                'English',
+                'Spanish',
+                'French',
+                'German',
+                'Arabic',
+                'Italian',
+                'Portuguese',
+                'Russian',
+                'Turkish',
+                'Chinese',
+                'Japanese',
+                'Hindi',
+                'Korean',
+                'Vietnamese',
+              ].map((language, index) => (
+                <label
+                  htmlFor={`languageInput-${index}`}
+                  key={language}
+                  className="inline-flex items-center mt-2"
+                >
+                  <input
+                    id={`languageInput-${index}`}
+                    type="checkbox"
+                    className="form-checkbox h-4 w-4 text-green"
+                  />
+                  <span className="ml-2">{language}</span>
+                </label>
+              ))}
             </div>
           </div>
           <div className="mb-4">
@@ -171,9 +210,10 @@ const Sidebar = () => {
                 'Smoking Allowed',
                 'Pool',
                 'Laundry Service',
-              ].map((amenity) => (
-                <label key={amenity}>
+              ].map((amenity, index) => (
+                <label key={amenity} htmlFor={`amenityInput-${index}`}>
                   <input
+                    id={`amenityInput-${index}`}
                     type="checkbox"
                     className="inline-flex items-center mt-2"
                   />
@@ -209,7 +249,7 @@ const Sidebar = () => {
           <p className="text-green text-xl font-bold flex-col">
             Travel to{' '}
             <span className="text-white text-2xl group-hover:text-gray-800">
-              United Kingdom
+              France
             </span>
           </p>
         </div>

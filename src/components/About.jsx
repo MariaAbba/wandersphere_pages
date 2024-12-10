@@ -30,8 +30,6 @@ import Carousel from 'react-multi-carousel'
 import { BsQuote } from 'react-icons/bs'
 import { MdOutlineStarHalf, MdStar } from 'react-icons/md'
 import { IoMdStarOutline } from 'react-icons/io'
-import Aos from 'aos'
-import 'aos/dist/aos.css'
 
 const responsive = {
   superLargeDesktop: {
@@ -99,18 +97,8 @@ const features = [
 ]
 
 const About = () => {
-
-   useEffect(() => {
-     Aos.init({
-       duration: 1500,
-     })
-   }, [])
-
-
   const [hoverCard, setHoverCard] = useState(null)
   const Available = ({ icon, title }) => {
-
-       
     return (
       <div className="flex flex-col gap-4 shadow-xl bg-white rounded-lg p-7 group">
         <span className="bg-[#f3f8f6] text-green w-fit rounded-full p-4 group-hover:text-white group-hover:bg-green">
@@ -201,7 +189,6 @@ const About = () => {
   }
 
   return (
-    
     <div>
       <section className="relative bg-black lg:h-[380px]">
         <img src={img} alt="" className="absolute h-full w-full object-cover" />
@@ -209,7 +196,9 @@ const About = () => {
           <span className="lg:text-[52px] text-3xl text-white text-center font-bold relative">
             About
           </span>
-          <p className="text-white text-lg text-center my-4">People don't take trips, trips take people.</p>
+          <p className="text-white text-lg text-center my-4">
+            People don't take trips, trips take people.
+          </p>
         </div>
       </section>
 
@@ -224,7 +213,7 @@ const About = () => {
                 </h6>
               </div>
               <h3 className="lg:text-5xl text-3xl font-bold pb-8 py-4 lg:leading-[1.2]">
-              Explore Wandersphere Real Adventure & Travels
+                Explore Wandersphere Real Adventure & Travels
               </h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
@@ -347,66 +336,66 @@ const About = () => {
               The Experts
             </h3>
           </div>
-        {/* </div> */}
-        <div className="relative pt-8 z-10">
-          <Carousel
-            responsive={responsive}
-            infinite
-            autoplay={true}
-            itemClass="pb-4 px-2"
-          >
-            {team.map((item, index) => (
-              <div
-                key={item.id}
-                onMouseEnter={() => setHoverCard(item.id)}
-                onMouseLeave={() => setHoverCard(null)}
-              >
-                <div className="relative px-10 z-20">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    loading="lazy"
-                    className="rounded-lg object-cover"
-                    width={300}
-                    height={300}
-                  />
-                  <div className="absolute bottom-0 right-10 z-30">
-                    <div className="transition-opacity duration-300 hover:cursor-pointer">
-                      <div className="bg-green h-11 p-4 rounded-br-lg text-white">
-                        <FaShareAlt />
+          {/* </div> */}
+          <div className="relative pt-8 z-10">
+            <Carousel
+              responsive={responsive}
+              infinite
+              autoplay={true}
+              itemClass="pb-4 px-2"
+            >
+              {team.map((item, index) => (
+                <div
+                  key={item.id}
+                  onMouseEnter={() => setHoverCard(item.id)}
+                  onMouseLeave={() => setHoverCard(null)}
+                >
+                  <div className="relative px-10 z-20">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      loading="lazy"
+                      className="rounded-lg object-cover"
+                      width={300}
+                      height={300}
+                    />
+                    <div className="absolute bottom-0 right-10 z-30">
+                      <div className="transition-opacity duration-300 hover:cursor-pointer">
+                        <div className="bg-green h-11 p-4 rounded-br-lg text-white">
+                          <FaShareAlt />
+                        </div>
                       </div>
                     </div>
+                    {hoverCard === item.id && (
+                      <div className="absolute bottom-11 right-10 transition-opacity duration-300 opacity-100 hover:cursor-pointer">
+                        <div className="flex flex-col">
+                          <div className="bg-green p-4 text-white">
+                            <FaFacebook />
+                          </div>
+                          <div className="bg-green p-4 text-white">
+                            <FaTwitter />
+                          </div>
+                          <div className="bg-green p-4 text-white">
+                            <FaInstagram />
+                          </div>
+                          <div className="bg-green p-4 text-white">
+                            <FaPinterest />
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                  {hoverCard === item.id && (
-                    <div className="absolute bottom-11 right-10 transition-opacity duration-300 opacity-100 hover:cursor-pointer">
-                      <div className="flex flex-col">
-                        <div className="bg-green p-4 text-white">
-                          <FaFacebook />
-                        </div>
-                        <div className="bg-green p-4 text-white">
-                          <FaTwitter />
-                        </div>
-                        <div className="bg-green p-4 text-white">
-                          <FaInstagram />
-                        </div>
-                        <div className="bg-green p-4 text-white">
-                          <FaPinterest />
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                  <div className="w-full p-7 pt-24 text-center box-border bg-white rounded-lg mb-7 -mt-20 shadow-lg">
+                    <span>
+                      <h3 className="text-2xl font-bold">{item.name}</h3>
+                      <p className="text-sm font-medium">{item.position}</p>
+                    </span>
+                  </div>
                 </div>
-                <div className="w-full p-7 pt-24 text-center box-border bg-white rounded-lg mb-7 -mt-20 shadow-lg">
-                  <span>
-                    <h3 className="text-2xl font-bold">{item.name}</h3>
-                    <p className="text-sm font-medium">{item.position}</p>
-                  </span>
-                </div>
-              </div>
-            ))}
-          </Carousel>
+              ))}
+            </Carousel>
+          </div>
         </div>
-         </div>
       </section>
       <section className="py-16">
         <div className="max-w-[1320px] mx-auto px-3 flex flex-col lg:flex-row gap-16">
