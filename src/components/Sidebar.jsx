@@ -29,8 +29,31 @@ const cardData = [
   },
 ]
 
+const languages = [
+  'English',
+  'French',
+  'German',
+  'Spanish',
+  'Arabic',
+  'Italian',
+  'Portuguese',
+  'Russian',
+  'Hindi',
+  'Turkish',
+  'Chinese',
+  'Japanese',
+  'Korean',
+  'Vietnamese',
+]
+
 const Sidebar = () => {
   const [value, setValue] = useState([399, 1999])
+  const [languageButton, setLanguageButton] = useState(false)
+  const visibleLanguages = languageButton ? languages : languages.slice(0, 4)
+
+  const handleLanguageButton = () => {
+    setLanguageButton((prev) => !prev)
+  }
 
   const Card = () => {
     return (
@@ -168,22 +191,7 @@ const Sidebar = () => {
           <div className="mb-4">
             <h3 className="font-semibold mb-2 text-lg">Languages</h3>
             <div className="flex flex-col">
-              {[
-                'English',
-                'Spanish',
-                'French',
-                'German',
-                'Arabic',
-                'Italian',
-                'Portuguese',
-                'Russian',
-                'Turkish',
-                'Chinese',
-                'Japanese',
-                'Hindi',
-                'Korean',
-                'Vietnamese',
-              ].map((language, index) => (
+              {visibleLanguages.map((language, index) => (
                 <label
                   htmlFor={`languageInput-${index}`}
                   key={language}
@@ -197,6 +205,12 @@ const Sidebar = () => {
                   <span className="ml-2">{language}</span>
                 </label>
               ))}
+              <button
+                onClick={handleLanguageButton}
+                className="mt-4 text-blue-500 underline"
+              >
+                {languageButton ? 'Show less options' : 'Show more options'}
+              </button>
             </div>
           </div>
           <div className="mb-4">
