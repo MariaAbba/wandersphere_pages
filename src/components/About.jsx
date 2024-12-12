@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import img from '../assets/bg-shape-01.jpg'
+import testimonial from './../assets/testimonial.jpg'
 import feat01 from '../assets/feat-01.jpg'
 import feat02 from '../assets/feat-02.jpg'
 import img02 from '../assets/img-02.jpg'
-import team1 from '../assets/team-1.jpg'
-import team2 from '../assets/team-2.jpg'
-import team3 from '../assets/team-3.jpg'
-import team4 from '../assets/team-4.jpg'
-import team5 from '../assets/team-5.jpg'
-import team6 from '../assets/team-6.jpg'
-import team7 from '../assets/team-7.jpg'
+import { team } from './../constants'
 import quotation from '../assets/quotation.png'
 import imgBg from '../assets/img-05.jpg'
 import { RiPlanetLine } from 'react-icons/ri'
@@ -50,30 +45,24 @@ const responsive = {
   },
 }
 
-const team = [
-  { id: 1, name: 'Ethan Bennett', image: team1, position: 'CEO' },
-  { id: 2, name: 'Olivia Parker', image: team2, position: 'Travel Consultant' },
-  { id: 3, name: 'Emma Collins', image: team3, position: 'Reservation Agent' },
-  { id: 4, name: 'Sophia Brooks', image: team4, position: 'Itinerary Planner' },
-  {
-    id: 5,
-    name: 'Noah Davis',
-    image: team5,
-    position: 'Group Travel Organizer',
+const responsives = {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5,
   },
-  {
-    id: 6,
-    name: 'Ava Morgan',
-    image: team6,
-    position: 'Destination Specialist',
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 5,
   },
-  {
-    id: 7,
-    name: 'Liam Carter',
-    image: team7,
-    position: 'Visa and Documentation Specialist',
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 3,
   },
-]
+  module: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+}
 
 const features = [
   {
@@ -98,6 +87,12 @@ const features = [
 
 const About = () => {
   const [hoverCard, setHoverCard] = useState(null)
+  const [currentSlide, setCurrentSlide] = useState(2)
+
+  const handleAfterChange = (_, state) => {
+    setCurrentSlide(state.currentSlide + 2)
+  }
+
   const Available = ({ icon, title }) => {
     return (
       <div className="flex flex-col gap-4 shadow-xl bg-white rounded-lg p-7 group">
@@ -472,7 +467,7 @@ const About = () => {
                 <BsQuote size={80} className="text-green" />
                 <span className="flex flex-col gap-3 items-start">
                   <p className="text-2xl font-bold">Quality Service</p>
-                  <Rating />
+                  <Rating rating={5} />
                 </span>
               </div>
               <p className="text-xl leading-9 mb-7 py-6 border-b border-[#e2dfeb]">
@@ -480,9 +475,73 @@ const About = () => {
                 nihil nesciunt optio? Repudiandae recusandae doloremque, iure
                 modi omnis officiis qui.
               </p>
+              <div className="flex gap-4 items-center">
+                <img
+                  src={testimonial}
+                  alt="customer photo"
+                  className="rounded-full object-cover h-[82px] w-[82px]"
+                />
+                <span>
+                  <p className="text-2xl font-bold">Kevin Smith</p>
+                  <p>Customer</p>
+                </span>
+              </div>
             </div>
           </div>
+          <div className="py-16 border-t border-[#E2DFEB]">
+            <Carousel
+              afterChange={handleAfterChange}
+              responsive={responsives}
+              infinite
+              autoPlay
+              arrows={false}
+              itemClass="px-2"
+            >
+              {[...Array(6)].map((_, index) => (
+                <div key={index}>
+                  <img
+                    src="/brand.png"
+                    alt={`Brand ${index + 1}`}
+                    className={`py-4 flex justify-center items-center hover:animate-pulse hover:opacity-100 hover:bg-[#F3F8F6] ${
+                      currentSlide % 6 === index
+                        ? 'bg-[#F3F8F6] animate-pulse'
+                        : 'flex-col opacity-40'
+                    }`}
+                  />
+                </div>
+              ))}
+            </Carousel>
+          </div>
         </div>
+      </section>
+
+      <section className="pb-24 pt-10 -mb-40 bg-[url(/bg-map.png)] bg-contain relative z-10">
+        <Carousel
+          responsive={responsives}
+          infinite
+          autoPlay
+          arrows={false}
+          itemClass="px-2"
+        >
+          {[
+            '/tour-05.jpg',
+            '/tour-04.jpg',
+            '/tour-06.jpg',
+            '/tour-07.jpg',
+            '/tour-08.jpg',
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="h-[298px] relative overflow-hidden w-full"
+            >
+              <img
+                src={item}
+                alt=""
+                className="rounded-lg h-full w-full object-cover hoverImg"
+              />
+            </div>
+          ))}
+        </Carousel>
       </section>
     </div>
   )

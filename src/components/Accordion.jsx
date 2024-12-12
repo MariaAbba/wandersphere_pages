@@ -1,4 +1,5 @@
 import React from 'react'
+import {items} from './../constants'
 
 import {
   Disclosure,
@@ -10,23 +11,6 @@ import {
   IoChevronUpCircleOutline,
 } from 'react-icons/io5'
 
-const items = [
-  {
-    title: 'How much Price About Tour & Travels',
-    content:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-  },
-  {
-    title: "We're providing the best services",
-    content:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-  },
-  {
-    title: 'Best Experience Travel Agency',
-    content:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-  },
-]
 
 const Accordion = () => {
   return (

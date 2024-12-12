@@ -6,7 +6,17 @@ import img5 from '../assets/img5.jpeg'
 import img6 from '../assets/img6.jpg'
 import img8 from '../assets/img8.jpg'
 
-const data = [
+
+import team1 from '../assets/team-1.jpg'
+import team2 from '../assets/team-2.jpg'
+import team3 from '../assets/team-3.jpg'
+import team4 from '../assets/team-4.jpg'
+import team5 from '../assets/team-5.jpg'
+import team6 from '../assets/team-6.jpg'
+import team7 from '../assets/team-7.jpg'
+
+
+export const toursData = [
   {
     id: 1,
     image: img,
@@ -80,5 +90,62 @@ const data = [
 ]
 
 
+export const items = [
+  {
+    title: 'How much Price About Tour & Travels',
+    content:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+  },
+  {
+    title: "We're providing the best services",
+    content:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+  },
+  {
+    title: 'Best Experience Travel Agency',
+    content:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+  },
+]
 
-export default  data
+export const team = [
+  { id: 1, name: 'Ethan Bennett', image: team1, position: 'CEO' },
+  { id: 2, name: 'Olivia Parker', image: team2, position: 'Travel Consultant' },
+  { id: 3, name: 'Emma Collins', image: team3, position: 'Reservation Agent' },
+  { id: 4, name: 'Sophia Brooks', image: team4, position: 'Itinerary Planner' },
+  {
+    id: 5,
+    name: 'Noah Davis',
+    image: team5,
+    position: 'Group Travel Organizer',
+  },
+  {
+    id: 6,
+    name: 'Ava Morgan',
+    image: team6,
+    position: 'Destination Specialist',
+  },
+  {
+    id: 7,
+    name: 'Liam Carter',
+    image: team7,
+    position: 'Visa and Documentation Specialist',
+  },
+]
+
+export const languages = [
+  'English',
+  'French',
+  'German',
+  'Spanish',
+  'Arabic',
+  'Italian',
+  'Portuguese',
+  'Russian',
+  'Hindi',
+  'Turkish',
+  'Chinese',
+  'Japanese',
+  'Korean',
+  'Vietnamese',
+]

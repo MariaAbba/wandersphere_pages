@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { languages } from './../constants'
 import { AiOutlineCalendar } from 'react-icons/ai'
 import { FaPeopleCarry, FaUsers } from 'react-icons/fa'
 import { MdOutlineParagliding, MdSearch } from 'react-icons/md'
@@ -29,22 +30,22 @@ const cardData = [
   },
 ]
 
-const languages = [
-  'English',
-  'French',
-  'German',
-  'Spanish',
-  'Arabic',
-  'Italian',
-  'Portuguese',
-  'Russian',
-  'Hindi',
-  'Turkish',
-  'Chinese',
-  'Japanese',
-  'Korean',
-  'Vietnamese',
-]
+// const languages = [
+//   'English',
+//   'French',
+//   'German',
+//   'Spanish',
+//   'Arabic',
+//   'Italian',
+//   'Portuguese',
+//   'Russian',
+//   'Hindi',
+//   'Turkish',
+//   'Chinese',
+//   'Japanese',
+//   'Korean',
+//   'Vietnamese',
+// ]
 
 const Sidebar = () => {
   const [value, setValue] = useState([399, 1999])

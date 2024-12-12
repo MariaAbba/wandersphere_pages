@@ -3,7 +3,7 @@ import slider from './../assets/bg-shape-01.jpg'
 import CardSlider from './CardSlider'
 import Sidebar from './Sidebar'
 import { BsSortAlphaDown } from 'react-icons/bs'
-import tourData from '../constants/data'
+import {toursData} from './../constants'
 import { ToursCard } from '../pages/Tours'
 import ReactPaginate from 'react-paginate'
 import { RiPlanetLine } from 'react-icons/ri'
@@ -19,8 +19,8 @@ const Destinations = () => {
     setSortAsc(true)
   }
 
-  const sortData = (tourData) => {
-    return tourData.sort((a, b) => {
+  const sortData = (toursData) => {
+    return toursData.sort((a, b) => {
       if (sortCriterion === 'name') {
         if (a.name && b.name) {
           return sortAsc
@@ -37,13 +37,13 @@ const Destinations = () => {
     })
   }
 
-  const sortedData = sortData([...tourData])
+  const sortedData = sortData([...toursData])
   const offset = currentPage * itemPerPage
   const currentPageData = sortedData.slice(offset, offset + itemPerPage)
-  const pageCount = Math.ceil(tourData.length / itemPerPage)
+  const pageCount = Math.ceil(toursData.length / itemPerPage)
 
-  const handlePageClick = (tourData) => {
-    setCurrentPage(tourData.selected)
+  const handlePageClick = (toursData) => {
+    setCurrentPage(toursData.selected)
   }
 
   return (
@@ -71,7 +71,7 @@ const Destinations = () => {
         <div className="lg:2/3">
           <div className="flex lg:flex-row flex-col justify-between py-4 pb-2 text-[#82828A]">
             <span className="flex gap-2">
-              <strong>{tourData.length}</strong> Tours
+              <strong>{toursData.length}</strong> Tours
             </span>
             <span className="flex gap-2">
               <span className="flex gap-2 items-center">
