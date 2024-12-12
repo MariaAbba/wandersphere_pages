@@ -3,12 +3,12 @@ import slider from './../assets/bg-shape-01.jpg'
 import CardSlider from './CardSlider'
 import Sidebar from './Sidebar'
 import { BsSortAlphaDown } from 'react-icons/bs'
-import tourData from './../constants/data'
+import tourData from '../constants/data'
 import { ToursCard } from '../pages/Tours'
 import ReactPaginate from 'react-paginate'
 import { RiPlanetLine } from 'react-icons/ri'
 
-const Tour = () => {
+const Destinations = () => {
   const [sortAsc, setSortAsc] = useState(true)
   const [sortCriterion, setSortCriterion] = useState('name')
   const [currentPage, setCurrentPage] = useState(0)
@@ -141,4 +141,4 @@ const Tour = () => {
   )
 }
 
-export default Tour
+export default Destinations

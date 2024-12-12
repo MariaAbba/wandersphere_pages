@@ -63,10 +63,13 @@ const Sidebar = () => {
         <div className="mb-4 flex items-center border-b py-4">
           <MdOutlineParagliding className="text-green text-5xl mr-2" />
           <div className="w-full">
-            <label htmlFor="destinationSelect" className="font-semibold mb-2">
+            <label
+              htmlFor="destinationSelect"
+              className="font-semibold mb-2 sr-only"
+            >
               Destinations
             </label>
-            {/* <h3 className="font-semibold mb-2"> Destinations</h3> */}
+            <h3 className="font-semibold mb-2"> Destinations</h3>
             <select
               name="destination"
               id="destinationSelect"
@@ -107,27 +110,25 @@ const Sidebar = () => {
           <AiOutlineCalendar className="text-green text-5xl mr-2" />
           <div className="w-full">
             <h3 className="font-semibold mb-2">Date From:</h3>
-            <label htmlFor="dateInput" className="sr-only">
-              <input type="date" id="dateInput" className="w-full rounded" />
-            </label>
+            <label htmlFor="dateInput" className="sr-only"></label>
+            <input type="date" id="dateInput" className="w-full rounded" />
           </div>
         </div>
         <div className="mb-4 flex items-center border-b py-4">
           <FaUsers className="text-green text-5xl mr-2" />
           <div className="w-full">
             <h3 className="font-semibold mb-2">Guests</h3>
-            <label htmlFor="guestInput" className="sr-only">
-              <input
-                id="guestInput"
-                type="number"
-                className="w-full rounded"
-                min="0"
-                max="45"
-              />
-            </label>
+            <label htmlFor="guestInput" className="sr-only"></label>
+            <input
+              id="guestInput"
+              type="number"
+              className="w-full rounded"
+              min="0"
+              max="45"
+            />
           </div>
         </div>
-        <div className="mb-4 flex items-center border-b py-4">
+        <div className="mb-4 flex items-start border-b py-4">
           <div className="w-full">
             <h3 className="font-semibold mb-2">Price</h3>
             <div className="flex justify-between mb-3">
@@ -137,31 +138,30 @@ const Sidebar = () => {
               <div className="bg-blue-500 text-white px-2 rounded">
                 ${value[1]}
               </div>
-
-              <ReactSlider
-                className="horizontal-slider"
-                thumbClassName="thumb"
-                trackClassName="track"
-                min={399}
-                max={1999}
-                value={value}
-                onChange={(value) => setValue(value)}
-                ariaLabel={['Lower thumb', 'Upper thumb']}
-                ariaValuetext={(value) => `Thumb value ${value}`}
-                renderTrack={({ key, ...props }, state) => {
-                  const { index } = state
-                  const trackStyle =
-                    index === 1 ? { backgroundColor: '#007bff' } : {}
-                  return (
-                    <div
-                      {...props}
-                      key={key}
-                      style={{ ...props.style, ...trackStyle }}
-                    />
-                  )
-                }}
-              />
             </div>
+            <ReactSlider
+              className="horizontal-slider"
+              thumbClassName="thumb"
+              trackClassName="track"
+              min={399}
+              max={1999}
+              value={value}
+              onChange={(value) => setValue(value)}
+              ariaLabel={['Lower thumb', 'Upper thumb']}
+              ariaValuetext={(value) => `Thumb value ${value}`}
+              renderTrack={({ key, ...props }, state) => {
+                const { index } = state
+                const trackStyle =
+                  index === 1 ? { backgroundColor: '#007bff' } : {}
+                return (
+                  <div
+                    {...props}
+                    key={key}
+                    style={{ ...props.style, ...trackStyle }}
+                  />
+                )
+              }}
+            />
           </div>
         </div>
         <div className="w-full">

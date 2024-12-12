@@ -28,7 +28,6 @@ import Explore from './Safety'
 import Safety from './Safety'
 import Blog from './Blog'
 
-
 const responsives = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
@@ -75,14 +74,18 @@ const type = [
   { id: 5, title: 'Adventure', icon: <LiaWarehouseSolid /> },
 ]
 const Hero = () => {
-
-
-
   const [currentSlide, setCurrentSlide] = useState(0)
+   const [guests, setGuests] = useState(1)
 
   const handleAfterChange = (_, state) => {
     setCurrentSlide(state.currentSlide)
   }
+
+  const handleChange = (e) => {
+    const value = Math.max(1, e.target.value) 
+    setGuests(value)
+  }
+
   const Explore = ({ image, country }) => {
     return (
       <div className=" relative group overflow-hidden rounded-[10px] shadow-lg">
@@ -155,11 +158,14 @@ const Hero = () => {
               <FaPeopleCarry className="text-green text-3xl mr-2" />
               <div className="flex flex-col w-full">
                 <p className="text-gray-600 text-sm ">Type</p>
-                <label
-                  htmlFor="typeInput"
-                  className="sr-only"
-                > </label>
-                <select name="type" id="typeInput" className="focus:outline-none">
+                <label htmlFor="typeInput" className="sr-only">
+                  {' '}
+                </label>
+                <select
+                  name="type"
+                  id="typeInput"
+                  className="focus:outline-none"
+                >
                   <option value="hotel">Hotel</option>
                   <option value="flight">Flight</option>
                   <option value="event">Event</option>
@@ -171,13 +177,12 @@ const Hero = () => {
               <FaRegCalendarAlt className="text-green text-3xl mr-2" />
               <div className="flex flex-col w-full">
                 <p className="text-gray-600 text-sm ">Date from</p>
-                <label htmlFor="dateInput" className="sr-only">
-                  <input
-                    type="date"
-                    id="dateInput"
-                    className="focus:outline-none"
-                  />
-                </label>
+                <label htmlFor="dateInput" className="sr-only"></label>
+                <input
+                  type="date"
+                  id="dateInput"
+                  className="focus:outline-none"
+                />
               </div>
             </div>
 
@@ -185,14 +190,15 @@ const Hero = () => {
               <FaUsers className="text-green text-3xl mr-2" />
               <div className="flex flex-col w-full">
                 <p className="text-gray-600 text-sm ">Guests</p>
-                <label htmlFor="guestsInput" className="sr-only">
-                  <input
-                    id="guestsInput"
-                    type="number"
-                    min="0"
-                    className="focus:outline-none w-16"
-                  />
-                </label>
+                <label htmlFor="guestsInput" className="sr-only"></label>
+                <input
+                  id="guestsInput"
+                  type="number"
+                  min="1"
+                  value={guests} 
+                  onChange={handleChange}
+                  className="focus:outline-none w-full"
+                />
               </div>
             </div>
             <div className="flex items-center mr-4 lg:mt-0 mt-4">
