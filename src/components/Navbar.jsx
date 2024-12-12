@@ -107,7 +107,7 @@ const Navbar = () => {
                   About Us
                 </NavLink>
                 <NavLink
-                  to="/contact"
+                  to="/contacts"
                   className="leading-normal no-underline text-white text-lg hover:text-green"
                 >
                   Contacts

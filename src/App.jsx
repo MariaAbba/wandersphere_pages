@@ -11,6 +11,8 @@ import { useEffect } from 'react'
 import Blog from './components/Blog'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import ScrollToTop from './components/ScrollToTop'
+import ScrollToTopButton from './components/ScrollToTopButton'
 
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -29,6 +32,7 @@ function App() {
         <Route path="/destinations" element={<Destinations />} />
         <Route path="/news" element={<Blog />} />
       </Routes>
+      <ScrollToTopButton />
       <Footer />
     </Router>
   )
