@@ -3,7 +3,7 @@ import slider from './../assets/bg-shape-01.jpg'
 import CardSlider from './CardSlider'
 import Sidebar from './Sidebar'
 import { BsSortAlphaDown } from 'react-icons/bs'
-import {toursData} from './../constants'
+import { toursData } from './../constants'
 import { ToursCard } from '../pages/Tours'
 import ReactPaginate from 'react-paginate'
 import { RiPlanetLine } from 'react-icons/ri'
@@ -12,6 +12,7 @@ const Destinations = () => {
   const [sortAsc, setSortAsc] = useState(true)
   const [sortCriterion, setSortCriterion] = useState('name')
   const [currentPage, setCurrentPage] = useState(0)
+
   const itemPerPage = 6
 
   const handleSortChange = (event) => {
@@ -81,7 +82,7 @@ const Destinations = () => {
                   onClick={() => setSortAsc(!sortAsc)}
                 />
               </span>
-              <label htmlFor="sortInput" className='sr-only'></label>
+              <label htmlFor="sortInput" className="sr-only"></label>
               <select
                 name="sort"
                 id="sortInput"

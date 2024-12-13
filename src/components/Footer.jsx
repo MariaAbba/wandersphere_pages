@@ -52,17 +52,17 @@ const Footer = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </p>
               <div className="flex items-center gap-2 justify-center">
-                <button className="rounded-full p-3 hover:bg-white hover:text-black bg-[#262d28]">
-                  <BsTwitter size={14} color="white" />
+                <button className="rounded-full p-3 bg-[#262d28] text-white hover:bg-white hover:text-green transition-colors">
+                  <BsTwitter size={14} />
                 </button>
-                <button className="rounded-full p-3  hover:bg-white hover:text-black bg-[#262d28]">
-                  <FaFacebook size={14} color="white" />
+                <button className="rounded-full p-3 bg-[#262d28] text-white hover:bg-white hover:text-green transition-colors">
+                  <FaFacebook size={14} />
                 </button>
-                <button className="rounded-full p-3  hover:bg-white hover:text-black bg-[#262d28]">
-                  <BsInstagram size={14} color="white" />
+                <button className="rounded-full p-3 bg-[#262d28] text-white hover:bg-white hover:text-green transition-colors">
+                  <BsInstagram size={14} />
                 </button>
-                <button className="rounded-full p-3  hover:bg-white hover:text-black bg-[#262d28]">
-                  <BsLinkedin size={14} color="white" />
+                <button className="rounded-full p-3 bg-[#262d28] text-white hover:bg-white hover:text-green transition-colors">
+                  <BsLinkedin size={14} />
                 </button>
               </div>
             </div>
