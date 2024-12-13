@@ -10,6 +10,7 @@ import {
 } from 'react-icons/md'
 import headphone from './../assets/headphones.png'
 import globe from './../assets/globe.png'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -69,9 +70,9 @@ const Footer = () => {
             <div className="lg:w-1/5 text-white">
               <h6 className="text-xl font-bold my-5 lg:mt-0">Pages</h6>
               <ul className="flex flex-col gap-4">
-                <a href="#" className="hover:text-green">
+                <Link to='/About' className="hover:text-green">
                   About Us
-                </a>
+                </Link>
 
                 <a href="#" className="hover:text-green">
                   Community Blog
